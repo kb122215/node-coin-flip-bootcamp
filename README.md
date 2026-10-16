@@ -7,7 +7,7 @@
 ### ✨ Key Features
 
 - **Feature A:** Server-Side Coin randomization: Heads or tails is determined on the Node.js server rather than in the browser, giving the project a true frontend to backend request flow.
-- **Feature B:** Interactive 3D Coin Flip: Players choose heads or tails and watch a gold coin animate before landing on the server generated result and dsplaying whether they won or lost.
+- **Feature B:** Interactive 3D Coin Flip: Players choose heads or tails and watch a gold coin animate before landing on the server generated result and displaying whether they won or lost.
 - **Feature C:** Fast & responsive Gameplay: Uses the native Node.js http and fs modules with lightweight vanilla javascript and responsive styling for a quick, framework-free experience.
 
 ### 🛠️ Tech Used
