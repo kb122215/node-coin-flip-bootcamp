@@ -1,8 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-const url = require("url");
-const querystring = require("querystring");
-const { error } = require("console");
+const path = require("path");
 
 const server = http.createServer(function (req, res) {
   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
@@ -14,7 +12,7 @@ const server = http.createServer(function (req, res) {
   console.log(page);
 
   if (page === "/") {
-    fs.readFile("../api.html", function (err, data) {
+    fs.readFile(path.join(__dirname, "../api.html"), function (err, data) {
       if (err) {
         res.writeHead(500, { "Content-Type": "text/html" });
         res.end("Something went wrong.");
@@ -68,7 +66,7 @@ const server = http.createServer(function (req, res) {
       res.end(JSON.stringify(responseObject));
     }
   } else if (page === "/main.css") {
-    fs.readFile("../main.css", function (err, data) {
+    fs.readFile(path.join(__dirname, "../main.css"), function (err, data) {
       if (err) {
         res.writeHead(404);
         res.end();
@@ -83,7 +81,7 @@ const server = http.createServer(function (req, res) {
       res.end();
     });
   } else if (page === "/js/main.js") {
-    fs.readFile("../js/main.js", function (err, data) {
+    fs.readFile(path.join(__dirname, "../js/main.js"), function (err, data) {
       if (err) {
         res.writeHead(404);
         res.end();
@@ -94,9 +92,25 @@ const server = http.createServer(function (req, res) {
         "Content-Type": "text/javascript",
       });
 
-      res.write(data);
-      res.end();
+      res.end(data);
     });
+  } else if (page === "/images/v1008-21-b.jpg") {
+    fs.readFile(
+      path.join(__dirname, "../images/v1008-21-b.jpg"),
+      function (err, data) {
+        if (err) {
+          console.log("Image error:", err);
+
+          res.writeHead(404);
+          res.end();
+          return;
+        }
+        res.writeHead(200, {
+          "Content-Type": "image/jpeg",
+        });
+        res.end(data);
+      },
+    );
   } else {
     res.writeHead(404, {
       "Content-Type": "text/plain",

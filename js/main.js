@@ -1,6 +1,7 @@
 const headsButton = document.querySelector("#callHeads");
 const tailsButton = document.querySelector("#callTails");
 const flipButton = document.querySelector("#flip");
+const coin = document.querySelector("#coin");
 
 const playerChoiceElement = document.querySelector("#player-choice");
 
@@ -35,6 +36,14 @@ flipButton.addEventListener("click", function () {
     return;
   }
 
+  flipButton.disabled = true;
+
+  messageElement.textContent = "Flipping...";
+  coinResultElement.textContent = "*";
+  coin.classList.remove("flip-heads", "flip-tails");
+
+  void coin.offsetWidth;
+
   fetch(`/api?choice=${playerChoice}`)
     .then(function (response) {
       return response.json();
@@ -42,13 +51,25 @@ flipButton.addEventListener("click", function () {
     .then(function (data) {
       console.log(data);
 
-      coinResultElement.textContent = data.coinResult;
+      if (data.coinResult === "heads") {
+        coin.classList.add("flip-heads");
+      } else {
+        coin.classList.add("flip-tails");
+      }
 
-      messageElement.textContent = data.message;
+      setTimeout(function () {
+        coinResultElement.textContent = data.coinResult;
+
+        messageElement.textContent = data.message;
+
+        flipButton.disabled = false;
+      }, 1800);
     })
     .catch(function (error) {
       console.log(error);
 
       messageElement.textContent = "Something went wrong.";
+
+      flipButton.disabled = false;
     });
 });
