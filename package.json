@@ -1,0 +1,21 @@
+{
+  "name": "coin-flip-bootcamp",
+  "version": "1.0.0",
+  "description": "- **Feature A:** Server-Side Coin randomization: Heads or tails is determined on the Node.js server rather than in the browser, giving the project a true frontend to backend request flow. - **Feature B:** Interactive 3D Coin Flip: Players choose heads or tails and watch a gold coin animate before landing on the server generated result and dsplaying whether they won or lost. - **Feature C:** Fast & responsive Gameplay: Uses the native Node.js http and fs modules with lightweight vanilla javascript and responsive styling for a quick, framework-free experience.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kb122215/node-coin-flip-bootcamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kb122215/node-coin-flip-bootcamp/issues"
+  },
+  "homepage": "https://github.com/kb122215/node-coin-flip-bootcamp#readme"
+}

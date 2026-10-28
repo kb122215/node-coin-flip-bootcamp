@@ -1,8 +1,8 @@
-### 📄 Description
-
 # Project: Node Coin Flip Game
 
 ### A simple coin flip guessing web application that uses the fs and http modules. Used http to create the server and fs to read your html file.
+
+### 🔗 [Open the live app on Render](https://node-palindrome-bootcamp-nc91.onrender.com/)
 
 ### ✨ Key Features
 
@@ -18,3 +18,9 @@
 - [Node JS]
 
 ![alt text](image.png)
+
+## 👩🏽‍💻 Created By
+
+**Karimah**
+
+- GitHub: [@kb122215](https://github.com/kb122215)
