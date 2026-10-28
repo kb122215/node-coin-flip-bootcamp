@@ -2,7 +2,7 @@
 
 ### A simple coin flip guessing web application that uses the fs and http modules. Used http to create the server and fs to read your html file.
 
-### 🔗 [Open the live app on Render](https://node-palindrome-bootcamp-nc91.onrender.com/)
+### 🔗 [Open the live app on Render](https://node-coin-flip-bootcamp-jtd5.onrender.com/)
 
 ### ✨ Key Features
 
